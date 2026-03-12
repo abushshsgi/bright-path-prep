@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, Users, BarChart3, Clock, Star, Shield, Globe, GraduationCap, Target, CheckCircle2, TrendingUp, Zap, FileText, Award, MessageSquare, Layers, PenTool, Brain, Headphones, Eye } from "lucide-react";
+import { ArrowRight, BookOpen, Users, BarChart3, Clock, Star, Shield, Globe, GraduationCap, Target, CheckCircle2, TrendingUp, Zap, FileText, Award, MessageSquare, Layers, PenTool, Brain, Headphones, Eye, Upload } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
 import satPracticeImg from "@/assets/sat-practice-ui.jpg";
 import scoreAnalyticsImg from "@/assets/score-analytics-ui.jpg";
