@@ -1,55 +1,53 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="border-t border-border bg-secondary/50">
-    <div className="max-w-6xl mx-auto px-6 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-        <div className="md:col-span-1">
-          <Link to="/" className="font-serif text-xl tracking-tight text-foreground">
-            Ivy<span className="text-accent">Bridge</span>
+  <footer className="border-t border-border bg-background">
+    <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+        <div className="col-span-2 md:col-span-1">
+          <Link to="/" className="font-display text-lg font-bold tracking-tight text-foreground">
+            ivy<span className="text-gradient">bridge</span>
           </Link>
-          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            The modern platform for SAT preparation and test creation. Connecting students with expert educators worldwide.
+          <p className="mt-3 text-xs text-muted-foreground leading-relaxed max-w-[200px]">
+            The modern platform for SAT & IELTS preparation and test creation.
           </p>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold text-foreground mb-4 font-sans">Platform</h4>
-          <div className="flex flex-col gap-2.5">
-            <Link to="/sat" className="text-sm text-muted-foreground hover:text-foreground transition-colors">SAT Preparation</Link>
-            <Link to="/creators" className="text-sm text-muted-foreground hover:text-foreground transition-colors">For Creators</Link>
-            <span className="text-sm text-muted-foreground">Practice Tests</span>
-            <span className="text-sm text-muted-foreground">Score Analytics</span>
+        {[
+          {
+            title: "Platform",
+            items: ["SAT Preparation", "IELTS Mock Tests", "Practice Tests", "Score Analytics", "Creator Tools"],
+          },
+          {
+            title: "For Creators",
+            items: ["Upload Tests", "Build Reputation", "Student Reviews", "Creator Dashboard", "Invite Students"],
+          },
+          {
+            title: "Resources",
+            items: ["Study Guides", "Blog", "Help Center", "Community", "API Docs"],
+          },
+          {
+            title: "Company",
+            items: ["About", "Careers", "Privacy", "Terms", "Contact"],
+          },
+        ].map((col) => (
+          <div key={col.title}>
+            <h4 className="text-xs font-semibold text-foreground mb-4 uppercase tracking-wider">{col.title}</h4>
+            <div className="flex flex-col gap-2">
+              {col.items.map((item) => (
+                <span key={item} className="text-xs text-muted-foreground hover:text-foreground cursor-pointer transition-colors">{item}</span>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold text-foreground mb-4 font-sans">Resources</h4>
-          <div className="flex flex-col gap-2.5">
-            <span className="text-sm text-muted-foreground">Study Guides</span>
-            <span className="text-sm text-muted-foreground">Blog</span>
-            <span className="text-sm text-muted-foreground">Help Center</span>
-            <span className="text-sm text-muted-foreground">Community</span>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold text-foreground mb-4 font-sans">Company</h4>
-          <div className="flex flex-col gap-2.5">
-            <span className="text-sm text-muted-foreground">About</span>
-            <span className="text-sm text-muted-foreground">Careers</span>
-            <span className="text-sm text-muted-foreground">Privacy Policy</span>
-            <span className="text-sm text-muted-foreground">Terms of Service</span>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-xs text-muted-foreground">© 2026 IvyBridge. All rights reserved.</p>
-        <div className="flex gap-6">
-          <span className="text-xs text-muted-foreground">Twitter</span>
-          <span className="text-xs text-muted-foreground">LinkedIn</span>
-          <span className="text-xs text-muted-foreground">Instagram</span>
+        <p className="text-[11px] text-muted-foreground">© 2026 IvyBridge. All rights reserved.</p>
+        <div className="flex gap-5">
+          {["Twitter", "LinkedIn", "GitHub", "Discord"].map((s) => (
+            <span key={s} className="text-[11px] text-muted-foreground hover:text-foreground cursor-pointer transition-colors">{s}</span>
+          ))}
         </div>
       </div>
     </div>
